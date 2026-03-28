@@ -1,0 +1,60 @@
+# --- OS ---
+.DS_Store
+Thumbs.db
+Desktop.ini
+
+# --- Secrets & environment variables ---
+.env
+.env.*
+!.env.example
+*.env
+**/.env
+**/.env.*
+*.secret
+*.secrets
+**/secrets/
+**/secret/
+
+# --- API keys & credentials ---
+*.pem
+*.key
+*.cert
+*.crt
+*.p12
+*.pfx
+*.jks
+*.keystore
+credentials.json
+service-account*.json
+*-credentials.json
+*-service-account.json
+token.json
+tokens.json
+auth.json
+*.gpg
+
+# --- Node ---
+node_modules/
+package-lock.json
+
+# --- Python ---
+__pycache__/
+*.pyc
+.venv/
+venv/
+
+# --- Logs & temp ---
+*.log
+*.tmp
+*.temp
+*.bak
+*.swp
+*~
+
+# --- IDE ---
+.idea/
+.vscode/
+*.code-workspace
+
+# --- Claude Code ---
+.claude/hooks/.session-timestamp
