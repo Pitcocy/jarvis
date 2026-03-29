@@ -112,9 +112,15 @@ Rewrite the template SOUL.md to be deeply personalized. This defines *who Claude
 
 The SOUL.md should feel like a document written *about a real relationship*, not a template with blanks filled in.
 
-### 6. Clean up
-- If `context/me/` still has the template files, remove it (the personalized folder replaces it)
-- Update the hooks if they reference `context/me/` — change to `context/{name}/`
+### 6. Clean up — MANDATORY
+
+The template `context/me/` folder MUST be removed after creating `context/{name}/`. Both cannot coexist — it confuses the hooks and creates duplicate context.
+
+```bash
+rm -rf context/me
+```
+
+Do this immediately after creating the personalized folder. Do not ask the user — the template files are replaced by the personalized ones, there is nothing to preserve.
 
 ## Step 3: Confirm
 
