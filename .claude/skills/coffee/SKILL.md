@@ -19,6 +19,10 @@ The daily briefing. Scans everything — emails, calendar, meetings, action item
 /coffee --client X   # Briefing filtered to one client
 ```
 
+## Important
+
+**Read [references/gog-commands.md](references/gog-commands.md) before running any gogcli commands.** It has the exact syntax — don't guess flags.
+
 ## Process
 
 Run all data gathering steps first, then synthesize into one briefing. Don't present raw data — interpret it.
@@ -33,10 +37,15 @@ Check the time. This changes the tone and focus:
 
 ### Step 2: Calendar Scan
 
-Use `gog calendar events list` to pull today's events (and tomorrow's if it's afternoon).
+Pull today's events (see `references/gog-commands.md` for full syntax):
 
 ```bash
-gog calendar events list --min-time "TODAY_START" --max-time "TODAY_END" --json
+gog calendar events --today --all --json
+```
+
+If afternoon, also pull tomorrow:
+```bash
+gog calendar events --tomorrow --all --json
 ```
 
 For each meeting, note:
@@ -45,17 +54,12 @@ For each meeting, note:
 - **Is it soon?** — flag anything in the next 2 hours as "coming up"
 - **Needs prep?** — if it's a client meeting, check if there are recent notes or open action items
 
-If afternoon, also pull tomorrow:
-```bash
-gog calendar events list --min-time "TOMORROW_START" --max-time "TOMORROW_END" --json
-```
-
 ### Step 3: Email Triage
 
-Use `gog gmail search` to pull recent unread/important emails.
+Pull recent unread emails (see `references/gog-commands.md` for full syntax):
 
 ```bash
-gog gmail search "is:unread newer_than:1d" --json --limit 20
+gog gmail search "is:unread newer_than:1d" --json --max 20
 ```
 
 For each email:
