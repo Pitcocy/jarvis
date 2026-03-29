@@ -2,6 +2,12 @@
 
 [gogcli](https://github.com/steipete/gogcli) gives Jarvis access to Gmail (read-only), Drive (read-only), and Calendar (read + write).
 
+**Works with any Google account** — you don't need Google Workspace. A free @gmail.com account works fine. Create a Google Cloud project at console.cloud.google.com (free), enable the APIs, and create OAuth credentials.
+
+**Token expiry note:** Personal Gmail accounts with the OAuth app in "Testing" mode have tokens that expire every 7 days. This means re-authentication via browser once a week. Jarvis handles this automatically — if a token expires mid-skill, it prompts you to re-auth and continues. To avoid this, publish the OAuth app (doesn't mean public — just moves it past Testing status).
+
+For the full gogcli command reference, see [gog-commands.md](gog-commands.md).
+
 ## Steps
 
 ### 1. Install gogcli
