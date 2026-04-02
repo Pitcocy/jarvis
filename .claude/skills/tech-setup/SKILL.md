@@ -27,6 +27,9 @@ Browser control — screenshots, navigation, forms, performance audits. Follow [
 ### 5. Meta Ads MCP
 Meta Ads reporting via TrueClicks. Requires GPT token in `.env.local`. Follow [references/meta-ads-mcp.md](references/meta-ads-mcp.md).
 
+### 6. Google Ads MCP
+Google Ads reporting via TrueClicks. Requires GPT token in `.env.local`. Follow [references/google-ads-mcp.md](references/google-ads-mcp.md).
+
 ### 6. Granola MCP
 Meeting notes — search transcripts, query notes, extract action items. OAuth-based, no tokens needed. Follow [references/granola-mcp.md](references/granola-mcp.md).
 
@@ -39,23 +42,25 @@ Meeting notes — search transcripts, query notes, extract action items. OAuth-b
 
 All API tokens live in `.env.local` in the project root. This file is gitignored — never committed.
 
-```
-META_ADS_GPT_TOKEN=xxx
-```
+`/setup-jarvis` creates `.env.local` with placeholder values like `your-meta-ads-token-here`. Before running a section that needs a token (Meta Ads, Google Ads), check `.env.local` first:
 
-Skills that need tokens read from this file. If `.env.local` doesn't exist yet, the setup steps will create it.
+- If the token is **real** (not a placeholder) → skip the "get token" step and go straight to adding the MCP server.
+- If the token is **still a placeholder** → walk the user through getting the real token and updating `.env.local`.
+
+This way users who already added their tokens can breeze through setup.
 
 ---
 
 ## After Setup
 
-Once all sections are complete, tell the user:
+Once all sections are complete, tell the user to run /exit to restart claude and check what is installed:
 
 > Jarvis is fully set up. You have:
 > - Version control with a private GitHub repo
 > - Google email, drive, and calendar access (gogcli)
 > - Browser control — screenshots, navigation, form filling (Chrome DevTools MCP)
 > - Meta Ads reporting (Meta Ads MCP)
+> - Google Ads reporting (Google Ads MCP)
 > - Meeting notes search and action items (Granola MCP)
 >
 > Every new conversation can now read your emails, check your calendar, search your drive, interact with websites, pull Meta Ads data, and reference your meeting notes. Try asking "What's on my calendar today?" or "What action items came out of my last meeting?"

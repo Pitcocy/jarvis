@@ -255,6 +255,21 @@ When I learn something new about how you work, I write it down. Not because I'm 
 TMPL
 fi
 
+# --- .env.local (placeholder credentials) ---
+if [ ! -f "$PROJECT_DIR/.env.local" ]; then
+cat > "$PROJECT_DIR/.env.local" << 'TMPL'
+# Jarvis — API tokens & secrets
+# This file is gitignored. Never commit it.
+# Replace the placeholder values during /tech-setup.
+
+# Meta Ads MCP (get token from https://gaql.app → Sign in with Meta → COPY GPT TOKEN)
+META_ADS_GPT_TOKEN=your-meta-ads-token-here
+
+# Google Ads MCP (get token from https://gaql.app → Sign in with Google → COPY GPT TOKEN)
+GOOGLE_ADS_GPT_TOKEN=your-google-ads-token-here
+TMPL
+fi
+
 # --- .gitignore ---
 if [ ! -f "$PROJECT_DIR/.gitignore" ]; then
 cat > "$PROJECT_DIR/.gitignore" << 'TMPL'
@@ -329,5 +344,6 @@ echo "  content/             — linkedin, email, ads, briefs"
 echo "  swipe-file/          — inspiration and examples"
 echo "  CLAUDE.md            — assistant instructions (template)"
 echo "  SOUL.md              — assistant personality (template)"
+echo "  .env.local           — API tokens placeholder (gitignored)"
 echo ""
 echo "Next step: run /get-to-know-me to personalize everything."
