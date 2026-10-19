@@ -129,6 +129,7 @@ Show the user a summary of what was created. Ask if anything needs adjusting. Ma
 ## Guidelines
 
 - Don't rush. If they're sharing, let them share. This context pays dividends in every future conversation.
+- Write every file in the language the user talks to you in. Dutch user, Dutch files.
 - Don't make up what you don't know. If they didn't mention hobbies, don't invent them.
 - Write the files in their voice where appropriate (brand-voice.md examples), but keep CLAUDE.md and SOUL.md in a clear, practical tone.
 - The SOUL.md should feel personal but not creepy. Reference what they shared, not what you inferred about their psychology.
