@@ -14,6 +14,14 @@ bash ${CLAUDE_SKILL_DIR}/scripts/scaffold.sh
 
 After the script runs, verify the structure was created by listing the top-level directories.
 
+Then check Node.js, which the memory hooks need (they're cross-platform Node scripts):
+
+```bash
+node --version
+```
+
+If it's missing or below v18, tell the user Jarvis' memory won't load at session start until they install it: download the LTS installer from https://nodejs.org, click through it, then restart the Claude app. No terminal needed.
+
 Then tell the user:
 
 1. What was created (brief summary — don't list every file)

@@ -3,16 +3,46 @@
     "SessionStart": [
       {
         "matcher": "startup|resume|clear",
-        "hooks": [{ "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/session-context-check.sh\"" }]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/session-context-check.mjs"
+            ],
+            "timeout": 30,
+            "statusMessage": "Loading your recent work..."
+          }
+        ]
       },
       {
         "matcher": "compact",
-        "hooks": [{ "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/post-compact-reminder.sh\"" }]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/post-compact-reminder.mjs"
+            ],
+            "timeout": 30,
+            "statusMessage": "Restoring context after compaction..."
+          }
+        ]
       }
     ],
     "Stop": [
       {
-        "hooks": [{ "type": "command", "command": "bash \"$CLAUDE_PROJECT_DIR/.claude/hooks/stop-memory-check.sh\"" }]
+        "hooks": [
+          {
+            "type": "command",
+            "command": "node",
+            "args": [
+              "${CLAUDE_PROJECT_DIR}/.claude/hooks/stop-memory-check.mjs"
+            ],
+            "timeout": 10,
+            "statusMessage": "Checking memory log..."
+          }
+        ]
       }
     ]
   }
