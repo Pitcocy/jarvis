@@ -21,7 +21,7 @@ Save the user's work to GitHub. Handles staging, committing, and pushing in one 
 ### Step 1: Check Status
 
 ```bash
-git status
+export PATH="$HOME/.local/bin:$PATH"; git status
 ```
 
 If there are no changes (working tree clean), tell the user:
@@ -123,10 +123,10 @@ If this is their first push ever, add:
 |-----------|--------|
 | No changes | "Nothing to save — already up to date." |
 | Sensitive file detected | Skip it, warn the user, add to .gitignore if missing |
-| No remote repo | Tell the user to run `/tech-setup` (GitHub section) first |
+| No remote repo | Tell the user to run `/setup-jarvis` (it creates the private backup) |
 | Merge conflict | Explain what happened in plain English, ask how they want to handle it |
-| Not a git repo | Tell the user to run `/tech-setup` (GitHub section) first |
-| Push asks for a username/password or fails on auth | Don't retry. The save is committed locally. Tell the user to open GitHub Desktop and click **Push origin** |
+| Not a git repo | Tell the user to run `/setup-jarvis` (it creates the private backup) |
+| Push asks for a username/password or fails on auth | Don't retry. The save is committed locally. Run the GitHub step of `/setup-jarvis` again to reconnect, then push |
 | Push rejected (remote ahead) | Run `git pull --rebase` first, then push. If conflicts, explain clearly. |
 
 ## What NOT to Do
