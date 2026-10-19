@@ -21,6 +21,8 @@ The daily briefing. Scans everything — emails, calendar, meetings, action item
 
 ## Important
 
+**Pick your data source first.** If Gmail / Google Calendar connector tools are available (added via claude.ai Settings > Connectors, common in the Claude desktop app), use those for Steps 2 and 3 and skip the `gog` commands below. Only fall back to gogcli when no connector is available.
+
 **Read [references/gog-commands.md](references/gog-commands.md) before running any gogcli commands.** It has the exact syntax — don't guess flags.
 
 ## Process

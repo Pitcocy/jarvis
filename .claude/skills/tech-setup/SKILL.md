@@ -8,6 +8,8 @@ disable-model-invocation: true
 
 Install and configure the tools Jarvis needs. Run each section in order — skip any that are already done.
 
+**Using the Claude desktop app without a terminal?** Skip this skill. It needs Homebrew, which asks for a password the app can't type in. Instead: back up with GitHub Desktop, and add Gmail, Calendar, Drive and Meta Ads as connectors in claude.ai Settings > Connectors. For Meta, use Meta's official connector (`https://mcp.facebook.com/ads`) and set every write tool to Block.
+
 **Important:** Some steps open a browser or require the user to act outside the terminal. Explain what they'll see before it happens. Don't rush — normies need a moment.
 
 ## Sections

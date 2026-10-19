@@ -126,6 +126,7 @@ If this is their first push ever, add:
 | No remote repo | Tell the user to run `/tech-setup` (GitHub section) first |
 | Merge conflict | Explain what happened in plain English, ask how they want to handle it |
 | Not a git repo | Tell the user to run `/tech-setup` (GitHub section) first |
+| Push asks for a username/password or fails on auth | Don't retry. The save is committed locally. Tell the user to open GitHub Desktop and click **Push origin** |
 | Push rejected (remote ahead) | Run `git pull --rebase` first, then push. If conflicts, explain clearly. |
 
 ## What NOT to Do
